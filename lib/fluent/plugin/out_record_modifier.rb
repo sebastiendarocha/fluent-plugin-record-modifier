@@ -76,7 +76,7 @@ DESC
         filter_record(tag, time, record)
         stream.add(time, modify_record(record))
       }
-      Fluent::Engine.emit_stream(@tag, stream)
+      router.emit_stream(@tag, stream)
 
       chain.next
     end
